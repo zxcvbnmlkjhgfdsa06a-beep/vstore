@@ -46,8 +46,15 @@ else:
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 DB_PATH = DATA_DIR / "vstore.db"
 
-# Rendered inspector images live under static/uploads so they're served directly.
-UPLOAD_DIR = APP_ROOT / "static" / "uploads"
+if os.environ.get("VERCEL"):
+    UPLOAD_DIR = Path("/tmp/uploads")
+else:
+    UPLOAD_DIR = APP_ROOT / "static" / "uploads"
+
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+else:
+    UPLOAD_DIR = APP_ROOT / "static" / "uploads"
+
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 LOGO_PATH = str(APP_ROOT / "assets" / "logo.png")
 BANNER_ART_PATH = str(APP_ROOT / "assets" / "banner.png")
