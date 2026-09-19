@@ -1,0 +1,23 @@
+# Secrets / environment — NEVER commit
+.env
+*.env
+
+# Database holds password hashes + Riot tokens — keep it off git
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Rendered inspector images (user data, regenerable)
+static/uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,18 @@
+VSTORE V100 - Valorant untouched integration
+
+- Built directly from the uploaded Valorant original: vstore (1)(2).zip
+- Valorant critical files kept byte-for-byte identical:
+  riot_auth.py
+  riot_skins.py
+  static/js/main.js
+  static/css/style.css
+  templates/index.html
+  templates/inspector.html
+  templates/partials/inspector_card.html
+  templates/skins.html
+  templates/store.html
+- Existing CSP/security middleware was NOT modified.
+- Existing Valorant routes/render pipeline were NOT modified.
+- LoL+TFT is isolated under /lol-tft.
+- Browser uses same-origin /lol-tft-helper/* proxy; Flask proxies to Local Helper at 127.0.0.1:17321.
+- LoL/TFT CSS is isolated in static/css/lol_tft.css.

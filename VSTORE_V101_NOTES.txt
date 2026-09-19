@@ -1,0 +1,10 @@
+VStore V101 - TFT ownership authoritative
+
+- Valorant core files/routes/templates remain based on V100 Valorant-untouched.
+- TFT permanent ownership now comes from /lol-inventory/v2/inventory/*.
+- ownershipType=OWNED => true owned.
+- ownershipType=LOYALTY => borrowed / Riot temporary access; excluded from owned collection.
+- ownershipType=F2P => excluded from owned collection.
+- loyaltySources alone is NOT used to decide ownership because real OWNED rows may also contain TFT_COMPENSATION.
+- Little Legend Lv1/Lv2/Lv3 are grouped to one card, keeping the highest level of the best entitlement status (OWNED > LOYALTY > unknown).
+- Confirmed against user diagnostic: Thuy Than Vac Phep=OWNED, Briar Huyet Nguyet=LOYALTY.

@@ -1,0 +1,17 @@
+Flask==3.0.3
+
+# Riot edge bypass for HTTP API calls (entitlements, name-service).
+# Falls back to urllib if missing — but recommended on most VPS hosts.
+curl_cffi==0.14.0
+
+# Inspector image rendering (card thumbnail + PNG export).
+Pillow==12.2.0
+
+# PNG card export via headless browser.
+playwright==1.60.0
+
+# Two-factor authentication (TOTP).
+pyotp==2.9.0
+
+# Production WSGI server (do NOT use Flask's dev server in prod).
+waitress==3.0.2
