@@ -35,8 +35,15 @@ from riot_auth import RiotAuthError
 # App config
 # ---------------------------------------------------------------------------
 APP_ROOT = Path(__file__).resolve().parent
-DATA_DIR = APP_ROOT / "data"
-DATA_DIR.mkdir(exist_ok=True)
+import os
+from pathlib import Path
+
+if os.environ.get("VERCEL"):
+    DATA_DIR = Path("/tmp/data")
+else:
+    DATA_DIR = Path(__file__).resolve().parent / "data"
+
+DATA_DIR.mkdir(parents=True, exist_ok=True)
 DB_PATH = DATA_DIR / "vstore.db"
 
 # Rendered inspector images live under static/uploads so they're served directly.
